@@ -17,18 +17,22 @@ Failover:
 P2 SRv6 backup policy installed successfully.
 
 Measured Results:
-First failed probe to P2 installation: 5.516 seconds
-First failed probe to recovery verification: 8.652 seconds
-P2 installation to recovery verification: 3.136 seconds
+First failed probe to P2 installation: 6.134 seconds
+First failed probe to recovery verification: 11.405 seconds
+P2 installation to recovery verification: 5.271 seconds
 
 Post-Failover Verification:
 R1 route confirmed through R3, R4 and R5.
 R2-R5 link restored.
-Destination ping: 10/10 received.
+Destination ping: 5/5 received during controller verification.
 Packet loss: 0%.
-Average RTT: 0.355 ms.
+Average RTT: 0.644 ms.
 
 Conclusion:
 The M2 controller detected the primary-path failure,
 installed the P2 SRv6 backup policy, and restored
 destination connectivity successfully.
+
+Note:
+Recovery timings are measured from controller log timestamps.
+The first failed probe is not the exact physical link-down time.

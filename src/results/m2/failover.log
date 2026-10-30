@@ -1484,4 +1484,362 @@ rtt min/avg/max/mdev = 0.144/0.496/0.942/0.332 ms
 2026-10-30 19:56:28.009982401 SUCCESS: Destination reachable
 2026-10-30 19:56:29.056575772 SUCCESS: Destination reachable
 2026-10-30 19:56:30.112315093 SUCCESS: Destination reachable
-                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                    ========================================
+M2 Failover Monitor Started: 2026-10-30 22:27:02.794583486
+2026-10-30 22:27:02.812823079 FAILURE: Probe 1/3
+2026-10-30 22:27:03.884747221 FAILURE: Probe 2/3
+2026-10-30 22:27:04.948636951 FAILURE: Probe 3/3
+2026-10-30 22:27:05.018194315 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:05.193957819 ERROR: P2 installation failed
+2026-10-30 22:27:06.230830041 FAILURE: Probe 4/3
+2026-10-30 22:27:06.295245423 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:06.500646793 ERROR: P2 installation failed
+2026-10-30 22:27:07.526053217 FAILURE: Probe 5/3
+2026-10-30 22:27:07.584021819 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:07.745346856 ERROR: P2 installation failed
+2026-10-30 22:27:08.772104525 FAILURE: Probe 6/3
+2026-10-30 22:27:08.833630754 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:08.982923290 ERROR: P2 installation failed
+2026-10-30 22:27:10.008126625 FAILURE: Probe 7/3
+2026-10-30 22:27:10.075744595 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:10.235729646 ERROR: P2 installation failed
+2026-10-30 22:27:11.257793362 FAILURE: Probe 8/3
+2026-10-30 22:27:11.312640494 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:11.449017859 ERROR: P2 installation failed
+2026-10-30 22:27:12.477050171 FAILURE: Probe 9/3
+2026-10-30 22:27:12.533993358 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:12.685613917 ERROR: P2 installation failed
+2026-10-30 22:27:13.710683610 FAILURE: Probe 10/3
+2026-10-30 22:27:13.765439929 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:13.908869720 ERROR: P2 installation failed
+2026-10-30 22:27:14.933582433 FAILURE: Probe 11/3
+2026-10-30 22:27:15.001380670 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:15.150157508 ERROR: P2 installation failed
+2026-10-30 22:27:16.170942646 FAILURE: Probe 12/3
+2026-10-30 22:27:16.239898598 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:16.386899678 ERROR: P2 installation failed
+2026-10-30 22:27:17.412757776 FAILURE: Probe 13/3
+2026-10-30 22:27:17.478596779 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:17.616144883 ERROR: P2 installation failed
+2026-10-30 22:27:18.642341623 FAILURE: Probe 14/3
+2026-10-30 22:27:18.705072421 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:18.850134751 ERROR: P2 installation failed
+2026-10-30 22:27:19.902244704 FAILURE: Probe 15/3
+2026-10-30 22:27:20.120542360 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:20.633672682 ERROR: P2 installation failed
+2026-10-30 22:27:21.720908900 FAILURE: Probe 16/3
+2026-10-30 22:27:21.943568156 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:22.128843446 ERROR: P2 installation failed
+2026-10-30 22:27:23.154133227 FAILURE: Probe 17/3
+2026-10-30 22:27:23.208971599 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:23.336181064 ERROR: P2 installation failed
+2026-10-30 22:27:24.361978701 FAILURE: Probe 18/3
+2026-10-30 22:27:24.434464031 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:24.569424088 ERROR: P2 installation failed
+2026-10-30 22:27:25.595784893 FAILURE: Probe 19/3
+2026-10-30 22:27:25.647451125 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:25.803009252 ERROR: P2 installation failed
+2026-10-30 22:27:26.823049061 FAILURE: Probe 20/3
+2026-10-30 22:27:26.874843968 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:27.004910322 ERROR: P2 installation failed
+2026-10-30 22:27:28.027315924 FAILURE: Probe 21/3
+2026-10-30 22:27:28.094176059 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:28.235925800 ERROR: P2 installation failed
+2026-10-30 22:27:29.258615043 FAILURE: Probe 22/3
+2026-10-30 22:27:29.317279580 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:29.445919707 ERROR: P2 installation failed
+2026-10-30 22:27:30.501067357 FAILURE: Probe 23/3
+2026-10-30 22:27:30.799758180 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:31.303850052 ERROR: P2 installation failed
+2026-10-30 22:27:32.381040836 FAILURE: Probe 24/3
+2026-10-30 22:27:32.438554203 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:32.590047347 ERROR: P2 installation failed
+2026-10-30 22:27:33.610099903 FAILURE: Probe 25/3
+2026-10-30 22:27:33.686143197 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:33.847215765 ERROR: P2 installation failed
+2026-10-30 22:27:34.879110657 FAILURE: Probe 26/3
+2026-10-30 22:27:34.952436446 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:35.094788464 ERROR: P2 installation failed
+2026-10-30 22:27:36.123951290 FAILURE: Probe 27/3
+2026-10-30 22:27:36.193787353 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:36.326880905 ERROR: P2 installation failed
+2026-10-30 22:27:37.348854861 FAILURE: Probe 28/3
+2026-10-30 22:27:37.407157343 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:37.538452959 ERROR: P2 installation failed
+2026-10-30 22:27:38.563439399 FAILURE: Probe 29/3
+2026-10-30 22:27:38.626115318 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:38.789266147 ERROR: P2 installation failed
+2026-10-30 22:27:39.821192024 FAILURE: Probe 30/3
+2026-10-30 22:27:39.885996737 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:40.021213126 ERROR: P2 installation failed
+2026-10-30 22:27:41.050177512 FAILURE: Probe 31/3
+2026-10-30 22:27:41.106792329 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:41.246851055 ERROR: P2 installation failed
+2026-10-30 22:27:42.272040369 FAILURE: Probe 32/3
+2026-10-30 22:27:42.328184169 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:42.455390990 ERROR: P2 installation failed
+2026-10-30 22:27:43.476402316 FAILURE: Probe 33/3
+2026-10-30 22:27:43.534864384 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:43.671689312 ERROR: P2 installation failed
+2026-10-30 22:27:44.693792288 FAILURE: Probe 34/3
+2026-10-30 22:27:44.754934450 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:44.899149251 ERROR: P2 installation failed
+2026-10-30 22:27:45.922125667 FAILURE: Probe 35/3
+2026-10-30 22:27:45.979167373 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:46.129805891 ERROR: P2 installation failed
+2026-10-30 22:27:47.152157012 FAILURE: Probe 36/3
+2026-10-30 22:27:47.204887890 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:47.330594949 ERROR: P2 installation failed
+2026-10-30 22:27:48.353640204 FAILURE: Probe 37/3
+2026-10-30 22:27:48.419351286 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:48.593959653 ERROR: P2 installation failed
+2026-10-30 22:27:49.623422574 FAILURE: Probe 38/3
+2026-10-30 22:27:49.697831974 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:49.870851331 ERROR: P2 installation failed
+2026-10-30 22:27:50.899276510 FAILURE: Probe 39/3
+2026-10-30 22:27:50.968691382 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:51.106067482 ERROR: P2 installation failed
+2026-10-30 22:27:52.128807418 FAILURE: Probe 40/3
+2026-10-30 22:27:52.186395406 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:52.347889296 ERROR: P2 installation failed
+2026-10-30 22:27:53.377097978 FAILURE: Probe 41/3
+2026-10-30 22:27:53.427424150 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:53.554683576 ERROR: P2 installation failed
+2026-10-30 22:27:54.576487847 FAILURE: Probe 42/3
+2026-10-30 22:27:54.638293341 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:54.789376168 ERROR: P2 installation failed
+2026-10-30 22:27:55.810827080 FAILURE: Probe 43/3
+2026-10-30 22:27:55.872053114 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:56.017511125 ERROR: P2 installation failed
+2026-10-30 22:27:57.043839675 FAILURE: Probe 44/3
+2026-10-30 22:27:57.105300849 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+ERROR: Could not discover P2 link-local next hops.
+2026-10-30 22:27:57.261425513 ERROR: P2 installation failed
+========================================
+M2 Failover Monitor Started: 2026-10-30 22:49:54.336663292
+2026-10-30 22:49:54.354834963 SUCCESS: Destination reachable
+2026-10-30 22:49:55.430610343 SUCCESS: Destination reachable
+2026-10-30 22:49:56.538735287 SUCCESS: Destination reachable
+2026-10-30 22:49:57.632627391 SUCCESS: Destination reachable
+2026-10-30 22:49:58.867771991 SUCCESS: Destination reachable
+2026-10-30 22:50:00.085967274 SUCCESS: Destination reachable
+2026-10-30 22:50:01.375811729 SUCCESS: Destination reachable
+2026-10-30 22:50:02.513840704 SUCCESS: Destination reachable
+2026-10-30 22:50:03.581885376 SUCCESS: Destination reachable
+2026-10-30 22:50:04.684315763 SUCCESS: Destination reachable
+2026-10-30 22:50:05.944678787 SUCCESS: Destination reachable
+2026-10-30 22:50:07.186780269 SUCCESS: Destination reachable
+2026-10-30 22:50:08.506692968 SUCCESS: Destination reachable
+2026-10-30 22:50:09.840562467 SUCCESS: Destination reachable
+2026-10-30 22:50:11.148942556 SUCCESS: Destination reachable
+2026-10-30 22:50:12.454211322 SUCCESS: Destination reachable
+2026-10-30 22:50:13.729968526 SUCCESS: Destination reachable
+2026-10-30 22:50:14.994070191 SUCCESS: Destination reachable
+2026-10-30 22:50:16.114201674 SUCCESS: Destination reachable
+2026-10-30 22:50:17.193985489 SUCCESS: Destination reachable
+2026-10-30 22:50:18.286404328 SUCCESS: Destination reachable
+2026-10-30 22:50:19.365863924 SUCCESS: Destination reachable
+2026-10-30 22:50:20.454548401 SUCCESS: Destination reachable
+2026-10-30 22:50:21.519099229 SUCCESS: Destination reachable
+2026-10-30 22:50:22.598561139 SUCCESS: Destination reachable
+2026-10-30 22:50:23.706462745 SUCCESS: Destination reachable
+2026-10-30 22:50:24.798771073 SUCCESS: Destination reachable
+2026-10-30 22:50:25.881749662 SUCCESS: Destination reachable
+2026-10-30 22:50:26.962921355 SUCCESS: Destination reachable
+2026-10-30 22:50:28.044108205 SUCCESS: Destination reachable
+2026-10-30 22:50:29.203763554 SUCCESS: Destination reachable
+2026-10-30 22:50:30.271633893 SUCCESS: Destination reachable
+2026-10-30 22:50:31.343520079 SUCCESS: Destination reachable
+2026-10-30 22:50:32.411135770 SUCCESS: Destination reachable
+2026-10-30 22:50:33.491706835 SUCCESS: Destination reachable
+2026-10-30 22:50:34.567408900 SUCCESS: Destination reachable
+2026-10-30 22:50:35.637757573 SUCCESS: Destination reachable
+2026-10-30 22:50:36.708068570 SUCCESS: Destination reachable
+2026-10-30 22:50:37.783957342 SUCCESS: Destination reachable
+2026-10-30 22:50:38.891901099 SUCCESS: Destination reachable
+2026-10-30 22:50:39.962078568 SUCCESS: Destination reachable
+2026-10-30 22:50:41.036703236 SUCCESS: Destination reachable
+2026-10-30 22:50:42.112945311 SUCCESS: Destination reachable
+2026-10-30 22:50:43.180237668 SUCCESS: Destination reachable
+2026-10-30 22:50:44.282880963 SUCCESS: Destination reachable
+2026-10-30 22:50:45.359762241 SUCCESS: Destination reachable
+2026-10-30 22:50:46.434261179 SUCCESS: Destination reachable
+2026-10-30 22:50:47.520419104 SUCCESS: Destination reachable
+2026-10-30 22:50:48.590733640 SUCCESS: Destination reachable
+2026-10-30 22:50:49.667997864 SUCCESS: Destination reachable
+2026-10-30 22:50:50.761175697 SUCCESS: Destination reachable
+2026-10-30 22:50:51.834165252 SUCCESS: Destination reachable
+2026-10-30 22:50:52.915643439 SUCCESS: Destination reachable
+2026-10-30 22:50:53.984563144 SUCCESS: Destination reachable
+2026-10-30 22:50:55.063921034 SUCCESS: Destination reachable
+2026-10-30 22:50:56.157890193 SUCCESS: Destination reachable
+2026-10-30 22:50:57.251605557 SUCCESS: Destination reachable
+2026-10-30 22:50:58.475757476 SUCCESS: Destination reachable
+2026-10-30 22:50:59.738287334 SUCCESS: Destination reachable
+2026-10-30 22:51:00.960334010 SUCCESS: Destination reachable
+2026-10-30 22:51:02.173022725 SUCCESS: Destination reachable
+2026-10-30 22:51:03.451927004 SUCCESS: Destination reachable
+2026-10-30 22:51:04.713561371 SUCCESS: Destination reachable
+2026-10-30 22:51:05.980425176 SUCCESS: Destination reachable
+2026-10-30 22:51:07.268959889 SUCCESS: Destination reachable
+2026-10-30 22:51:08.511349269 SUCCESS: Destination reachable
+2026-10-30 22:51:09.804130107 SUCCESS: Destination reachable
+2026-10-30 22:51:11.099296870 SUCCESS: Destination reachable
+2026-10-30 22:51:12.230612288 SUCCESS: Destination reachable
+2026-10-30 22:51:13.309417179 SUCCESS: Destination reachable
+2026-10-30 22:51:14.380381258 SUCCESS: Destination reachable
+2026-10-30 22:51:15.462138276 SUCCESS: Destination reachable
+2026-10-30 22:51:16.544202882 SUCCESS: Destination reachable
+2026-10-30 22:51:17.622325459 SUCCESS: Destination reachable
+2026-10-30 22:51:18.688804463 SUCCESS: Destination reachable
+2026-10-30 22:51:19.772898462 SUCCESS: Destination reachable
+2026-10-30 22:51:20.840062918 SUCCESS: Destination reachable
+2026-10-30 22:51:21.944454544 SUCCESS: Destination reachable
+2026-10-30 22:51:23.210045548 SUCCESS: Destination reachable
+2026-10-30 22:51:24.498490918 SUCCESS: Destination reachable
+2026-10-30 22:51:25.775378178 SUCCESS: Destination reachable
+2026-10-30 22:51:27.053598362 SUCCESS: Destination reachable
+2026-10-30 22:51:28.376918904 SUCCESS: Destination reachable
+2026-10-30 22:51:29.642347620 SUCCESS: Destination reachable
+2026-10-30 22:51:30.856137888 SUCCESS: Destination reachable
+2026-10-30 22:51:32.064873258 SUCCESS: Destination reachable
+2026-10-30 22:51:33.270023881 SUCCESS: Destination reachable
+2026-10-30 22:51:34.488817843 SUCCESS: Destination reachable
+2026-10-30 22:51:35.689007196 SUCCESS: Destination reachable
+2026-10-30 22:51:36.900752147 SUCCESS: Destination reachable
+2026-10-30 22:51:38.087869474 SUCCESS: Destination reachable
+2026-10-30 22:51:39.302272421 SUCCESS: Destination reachable
+2026-10-30 22:51:40.533229031 SUCCESS: Destination reachable
+2026-10-30 22:51:41.830623232 SUCCESS: Destination reachable
+2026-10-30 22:51:43.062363716 SUCCESS: Destination reachable
+2026-10-30 22:51:44.127651487 SUCCESS: Destination reachable
+2026-10-30 22:51:45.205561903 SUCCESS: Destination reachable
+2026-10-30 22:51:46.297814112 SUCCESS: Destination reachable
+2026-10-30 22:51:47.374638881 SUCCESS: Destination reachable
+2026-10-30 22:51:48.454158553 SUCCESS: Destination reachable
+2026-10-30 22:51:49.528999251 SUCCESS: Destination reachable
+2026-10-30 22:51:50.622724468 SUCCESS: Destination reachable
+2026-10-30 22:51:51.694121181 SUCCESS: Destination reachable
+2026-10-30 22:51:52.772642406 FAILURE: Probe 1/3
+2026-10-30 22:51:54.899590404 TIMEOUT: Recovery not verified within 120s
+========================================
+M2 Failover Monitor Started: 2026-10-30 23:09:59.337828764
+2026-10-30 23:09:59.355923065 SUCCESS: Destination reachable
+2026-10-30 23:10:00.442937510 SUCCESS: Destination reachable
+2026-10-30 23:10:01.565234352 SUCCESS: Destination reachable
+2026-10-30 23:10:02.851217589 SUCCESS: Destination reachable
+2026-10-30 23:10:04.079309629 SUCCESS: Destination reachable
+2026-10-30 23:10:05.298305992 SUCCESS: Destination reachable
+2026-10-30 23:10:06.504777070 SUCCESS: Destination reachable
+2026-10-30 23:10:07.749427173 SUCCESS: Destination reachable
+2026-10-30 23:10:08.854739691 SUCCESS: Destination reachable
+2026-10-30 23:10:09.946872571 SUCCESS: Destination reachable
+2026-10-30 23:10:11.020444861 SUCCESS: Destination reachable
+2026-10-30 23:10:12.091827382 SUCCESS: Destination reachable
+2026-10-30 23:10:13.165023929 SUCCESS: Destination reachable
+2026-10-30 23:10:14.239221016 SUCCESS: Destination reachable
+2026-10-30 23:10:15.324231080 FAILURE: Probe 1/3
+2026-10-30 23:10:17.425448202 FAILURE: Probe 2/3
+2026-10-30 23:10:19.493670452 FAILURE: Probe 3/3
+2026-10-30 23:10:20.609794042 FAILOVER: Switching to P2
+Configuring P2 SRv6 backup policy...
+R1 -> R3: fe80::f481:f5ff:fe6e:1e62
+R3 -> R4: fe80::8ca3:78ff:fef0:a735
+R4 -> R5: fe80::6469:2ff:fea8:330e
+P2 SRv6 backup policy installed successfully.
+2026-10-30 23:10:21.458338644 P2 INSTALLED
+PING fc00:b::1 (fc00:b::1) 56 data bytes
+64 bytes from fc00:b::1: icmp_seq=1 ttl=60 time=0.267 ms
+64 bytes from fc00:b::1: icmp_seq=2 ttl=60 time=0.693 ms
+64 bytes from fc00:b::1: icmp_seq=3 ttl=60 time=0.907 ms
+64 bytes from fc00:b::1: icmp_seq=4 ttl=60 time=1.09 ms
+64 bytes from fc00:b::1: icmp_seq=5 ttl=60 time=0.264 ms
+
+--- fc00:b::1 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4068ms
+rtt min/avg/max/mdev = 0.264/0.644/1.090/0.333 ms
+2026-10-30 23:10:26.729137538 RECOVERY SUCCESS: P2 connectivity verified
+M2 Failover Monitor Completed: 2026-10-30 23:10:26.769951430

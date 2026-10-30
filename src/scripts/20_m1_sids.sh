@@ -4,7 +4,7 @@ set -euo pipefail
 echo "Installing R2 End SID..."
 
 sudo ip -n r2 -6 route replace fc00:0:2::1/128 \
-    table 90 encap seg6local action End count dev r2-r5
+    table 90 encap seg6local action End dev r2-r5
 
 sudo ip -n r2 -6 rule del \
     to fc00:0:2::1/128 lookup 90 priority 999 2>/dev/null || true

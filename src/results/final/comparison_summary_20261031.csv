@@ -1,0 +1,4 @@
+mode,trials,transmitted,received,packet_loss_percent,mean_trial_avg_rtt_ms,median_trial_avg_rtt_ms,mean_trial_duration_ms,highest_observed_rtt_ms
+M0_OSPFv3,30,30000,30000,0.0,0.01497,0.016,1013.6,4.685
+P1_SRv6,30,30000,30000,0.0,0.05693,0.06,1096.8,97.209
+P2_SRv6,30,30000,30000,0.0,0.01993,0.0205,1013.3,2.215

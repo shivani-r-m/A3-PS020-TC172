@@ -1,0 +1,1 @@
+fc00:b::1  encap seg6 mode encap segs 2 [ fc00:0:2::1 fc00:0:5::d6 ] via fe80::48ed:39ff:fefb:8aa7 dev r1-r2 metric 1024 pref medium

@@ -1,0 +1,18 @@
+AIORI-3 SRv6 Project - Path Validation
+Date: 2026-10-31
+
+P1: S -> R1 -> R2 -> R5 -> D
+Packets: 10 transmitted, 10 received
+Packet loss: 0%
+Minimum RTT: 0.095 ms
+Average RTT: 0.142 ms
+Maximum RTT: 0.201 ms
+
+P2: S -> R1 -> R3 -> R4 -> R5 -> D
+Packets: 10 transmitted, 10 received
+Packet loss: 0%
+Minimum RTT: 0.114 ms
+Average RTT: 0.239 ms
+Maximum RTT: 0.812 ms
+
+Result: Both SRv6 paths successfully validated.

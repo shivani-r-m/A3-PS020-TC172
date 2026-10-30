@@ -162,11 +162,12 @@ The benchmark uses a requested 1 ms packet interval. Actual observed throughput 
 
 The recorded M2 test measured:
 
-- First failed probe to P2 installation: approximately 5.516 seconds.
-- First failed probe to recovery verification: approximately 8.652 seconds.
-- P2 installation to recovery verification: approximately 3.136 seconds.
+- First failed probe to P2 installation: approximately 6.134 seconds.
+- First failed probe to recovery verification: approximately 11.405 seconds.
+- P2 installation to recovery verification: approximately 5.271 seconds.
+- Recovery verification: 5 successful pings, 0% packet loss, average RTT 0.644 ms.
 
-These measurements are based on the recorded controller log timestamps. The first failed probe is not the exact physical link-down timestamp.
+These measurements are based on the recorded controller log timestamps. The first failed probe is not the exact physical link-down timestamp. This is one measured failover trial, not a general performance guarantee.
 
 ## 8. Result Files
 
