@@ -1,0 +1,155 @@
+tcpdump: listening on r1-r2, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+18:07:00.637404 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:00.747705 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:01.639762 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:01.747642 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:02.257550 IP6 (flowlabel 0x1517a, hlim 63, next-header Routing (43), payload length 144) fc00:12::1 > fc00:0:2::1: RT6 (len=4, type=4, segleft=1, last-entry=1, flags=0x0, tag=0, [0]fc00:0:5::d6, [1]fc00:0:2::1) IP6 (flowlabel 0x1517a, hlim 64, next-header ICMPv6 (58), payload length 64) fc00:a::1 > fc00:b::1: [icmp6 sum ok] ICMP6, echo request, id 6008, seq 1
+18:07:02.257724 IP6 (flowlabel 0xd5295, hlim 64, next-header ICMPv6 (58), payload length 192) fc00:12::2 > fc00:12::1: [icmp6 sum ok] ICMP6, destination unreachable, unreachable route fc00:0:2::1
+18:07:02.638931 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:02.756649 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:03.272577 IP6 (flowlabel 0x1517a, hlim 63, next-header Routing (43), payload length 144) fc00:12::1 > fc00:0:2::1: RT6 (len=4, type=4, segleft=1, last-entry=1, flags=0x0, tag=0, [0]fc00:0:5::d6, [1]fc00:0:2::1) IP6 (flowlabel 0x1517a, hlim 64, next-header ICMPv6 (58), payload length 64) fc00:a::1 > fc00:b::1: [icmp6 sum ok] ICMP6, echo request, id 6008, seq 2
+18:07:03.272627 IP6 (flowlabel 0xd5295, hlim 64, next-header ICMPv6 (58), payload length 192) fc00:12::2 > fc00:12::1: [icmp6 sum ok] ICMP6, destination unreachable, unreachable route fc00:0:2::1
+18:07:03.640511 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:03.773400 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:04.295792 IP6 (flowlabel 0x1517a, hlim 63, next-header Routing (43), payload length 144) fc00:12::1 > fc00:0:2::1: RT6 (len=4, type=4, segleft=1, last-entry=1, flags=0x0, tag=0, [0]fc00:0:5::d6, [1]fc00:0:2::1) IP6 (flowlabel 0x1517a, hlim 64, next-header ICMPv6 (58), payload length 64) fc00:a::1 > fc00:b::1: [icmp6 sum ok] ICMP6, echo request, id 6008, seq 3
+18:07:04.295824 IP6 (flowlabel 0xd5295, hlim 64, next-header ICMPv6 (58), payload length 192) fc00:12::2 > fc00:12::1: [icmp6 sum ok] ICMP6, destination unreachable, unreachable route fc00:0:2::1
+18:07:04.641521 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:04.774161 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:05.320050 IP6 (flowlabel 0x1517a, hlim 63, next-header Routing (43), payload length 144) fc00:12::1 > fc00:0:2::1: RT6 (len=4, type=4, segleft=1, last-entry=1, flags=0x0, tag=0, [0]fc00:0:5::d6, [1]fc00:0:2::1) IP6 (flowlabel 0x1517a, hlim 64, next-header ICMPv6 (58), payload length 64) fc00:a::1 > fc00:b::1: [icmp6 sum ok] ICMP6, echo request, id 6008, seq 4
+18:07:05.320099 IP6 (flowlabel 0xd5295, hlim 64, next-header ICMPv6 (58), payload length 192) fc00:12::2 > fc00:12::1: [icmp6 sum ok] ICMP6, destination unreachable, unreachable route fc00:0:2::1
+18:07:05.641516 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:05.774476 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:06.345431 IP6 (flowlabel 0x1517a, hlim 63, next-header Routing (43), payload length 144) fc00:12::1 > fc00:0:2::1: RT6 (len=4, type=4, segleft=1, last-entry=1, flags=0x0, tag=0, [0]fc00:0:5::d6, [1]fc00:0:2::1) IP6 (flowlabel 0x1517a, hlim 64, next-header ICMPv6 (58), payload length 64) fc00:a::1 > fc00:b::1: [icmp6 sum ok] ICMP6, echo request, id 6008, seq 5
+18:07:06.345480 IP6 (flowlabel 0xd5295, hlim 64, next-header ICMPv6 (58), payload length 192) fc00:12::2 > fc00:12::1: [icmp6 sum ok] ICMP6, destination unreachable, unreachable route fc00:0:2::1
+18:07:06.644472 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:06.774582 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:07.499257 IP6 (hlim 255, next-header ICMPv6 (58), payload length 32) fe80::d84e:91ff:fe77:2f46 > fe80::d8e9:1fff:fec1:dd02: [icmp6 sum ok] ICMP6, neighbor solicitation, length 32, who has fe80::d8e9:1fff:fec1:dd02
+	  source link-address option (1), length 8 (1): da:4e:91:77:2f:46
+	    0x0000:  da4e 9177 2f46
+18:07:07.499182 IP6 (hlim 255, next-header ICMPv6 (58), payload length 32) fe80::d8e9:1fff:fec1:dd02 > fe80::d84e:91ff:fe77:2f46: [icmp6 sum ok] ICMP6, neighbor solicitation, length 32, who has fe80::d84e:91ff:fe77:2f46
+	  source link-address option (1), length 8 (1): da:e9:1f:c1:dd:02
+	    0x0000:  dae9 1fc1 dd02
+18:07:07.499612 IP6 (hlim 255, next-header ICMPv6 (58), payload length 24) fe80::d84e:91ff:fe77:2f46 > fe80::d8e9:1fff:fec1:dd02: [icmp6 sum ok] ICMP6, neighbor advertisement, length 24, tgt is fe80::d84e:91ff:fe77:2f46, Flags [router, solicited]
+18:07:07.499640 IP6 (hlim 255, next-header ICMPv6 (58), payload length 24) fe80::d8e9:1fff:fec1:dd02 > fe80::d84e:91ff:fe77:2f46: [icmp6 sum ok] ICMP6, neighbor advertisement, length 24, tgt is fe80::d8e9:1fff:fec1:dd02, Flags [router, solicited]
+18:07:07.644535 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:07.778898 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:08.646117 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:08.779148 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:09.646834 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:09.780027 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+18:07:10.649457 IP6 (class 0xc0, flowlabel 0xf8654, hlim 1, next-header OSPF (89), payload length 40) fe80::d8e9:1fff:fec1:dd02 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 2.2.2.2, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.3, Priority 1
+	  Neighbor List:
+	    1.1.1.1
+18:07:10.785216 IP6 (class 0xc0, flowlabel 0x741ff, hlim 1, next-header OSPF (89), payload length 40) fe80::d84e:91ff:fe77:2f46 > ff02::5: OSPFv3, Hello, length 40
+	Router-ID 1.1.1.1, Backbone Area
+	Options [V6, External, Router]
+	  Hello Timer 1s, Dead Timer 3s, Interface-ID 0.0.0.4, Priority 1
+	  Neighbor List:
+	    2.2.2.2
+
+36 packets captured
+38 packets received by filter
+0 packets dropped by kernel

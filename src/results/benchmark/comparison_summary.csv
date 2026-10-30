@@ -1,0 +1,3 @@
+path,trials,transmitted,received,packet_loss_percent,mean_trial_avg_rtt_ms,median_trial_avg_rtt_ms,mean_trial_duration_ms,mean_observed_rate_pps,highest_rtt_ms
+P1,30,30000,30000,0.0,0.020366666666666665,0.0125,1025.4333333333334,976.8014976663586,3.174
+P2,30,30000,30000,0.0,0.02093333333333333,0.016,1017.3,983.8365775566429,44.914

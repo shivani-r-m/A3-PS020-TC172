@@ -1,0 +1,35 @@
+M0 BASELINE OSPFv3 FAILURE TEST
+
+Topology:
+R1-R2-R5 (primary)
+R1-R3-R4-R5 (backup)
+
+Failure:
+R2-R5 link brought down and restored.
+
+Failure injection timestamp:
+2026-10-30 17:49:58.567
+
+First observed backup route:
+2026-10-30 17:49:58.670
+
+Route during failure:
+R1 -> R3 -> R4 -> R5
+Next hop interface at R1: r1-r3
+Observed in all 16 route checks.
+
+Route after restoration:
+R1 -> R2 -> R5
+Next hop interface at R1: r1-r2
+
+Ping results:
+Packets transmitted: 400
+Packets received: 400
+Packet loss: 0%
+Minimum RTT: 0.052 ms
+Average RTT: 0.256 ms
+Maximum RTT: 4.847 ms
+
+Note:
+Preliminary smoke test at 20 packets per second.
+Not the final 1000-pps, 30-run benchmark.

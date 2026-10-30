@@ -1,0 +1,24 @@
+AIORI-3 SRv6 Path Validation
+============================
+
+P1 - Primary Path: R1 -> R2 -> R5 -> D
+Packets transmitted: 10
+Packets received: 10
+Packet loss: 0%
+Average RTT: 0.273 ms
+R2 End packets: 10
+R5 End.DT6 packets: 10
+Endpoint errors: 0
+
+P2 - Backup Path: R1 -> R3 -> R4 -> R5 -> D
+Packets transmitted: 10
+Packets received: 10
+Packet loss: 0%
+Average RTT: 0.353 ms
+R3 End packets: 10
+R4 End packets: 10
+R5 End.DT6 packets: 10
+Endpoint errors: 0
+
+Note: These are initial 10-packet smoke tests,
+not the final 30-trial benchmark.
