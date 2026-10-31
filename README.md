@@ -18,7 +18,7 @@
 
 In plain IPv6 routing, every router chooses its own next hop, and after a link failure traffic stays broken until the routing protocol detects the failure and reconverges. Segment Routing over IPv6 (SRv6, RFC 8754 and RFC 8986) lets the first router place a list of Segment Identifiers (SIDs) in the packet header, so the packet follows a path we choose.
 
-This project builds a Linux-based virtual lab and measures what happens to traffic when the same link fails under three routing modes. It does not claim that SRv6 is always better than plain IPv6. Results apply to this topology, this failure and the timers used.
+This project builds a Linux-based virtual lab and measures what happens to traffic when the same link fails under three routing modes. Results apply to this topology, this failure and the timers used.
 
 ### Objectives
 
@@ -30,7 +30,7 @@ This project builds a Linux-based virtual lab and measures what happens to traff
 
 ---
 
-## 2. Implementation Status
+## 2. Implemented Features
 
 | Area | Status |
 |---|---|
@@ -42,9 +42,6 @@ This project builds a Linux-based virtual lab and measures what happens to traff
 | Timestamp logging, packet loss, RTT, detection / repair / total recovery measurement | Implemented |
 | Repeated trials with statistical analysis | Implemented |
 | React + Vite dashboard (read-only, saved results) | Implemented |
-| Automatic failback to the primary path | **Not implemented** |
-| Live control of the network from the dashboard | **Not implemented** |
-| BFD-based detection, TI-LFA-style repair | **Future work** |
 
 ---
 
@@ -52,16 +49,25 @@ This project builds a Linux-based virtual lab and measures what happens to traff
 
 ### Topology
 
-Five routers run as Linux network namespaces on one Ubuntu host, in a ring: R1–R2–R5–R4–R3–R1. A source host sits behind R1 and a destination host behind R5. The link under test is R2–R5.
+Five routers run as Linux network namespaces on one Ubuntu host, connected in a ring: R1–R2–R5–R4–R3–R1. A source host sits behind R1 and a destination host behind R5. The link under test is R2–R5.
 
 ```
-                 +-----+ ---- +-----+
-        S --- R1 |     |      | R2  |
-                 +-----+      +-----+
-                   |             |   <-- failed link (R2-R5)
-                 +-----+      +-----+
-                 | R3  | ---- | R4  | --- R5 --- D
-                 +-----+      +-----+
+ P1 (primary): R1 -> R2 -> R5          SIDs {fc00:0:2::1, fc00:0:5::d6}
+ P2 (backup) : R1 -> R3 -> R4 -> R5    SIDs {fc00:0:3::1, fc00:0:4::1, fc00:0:5::d6}
+
+       fc00:a::/64      fc00:12::/64       fc00:25::/64         fc00:b::/64
+ +---+          +----+              +----+              +----+            +---+
+ | S |----------| R1 |--------------| R2 |------- X ----| R5 |------------| D |
+ +---+          +----+              +----+              +----+            +---+
+                  |                LINK FAILED (R2-R5)    |
+                  |  fc00:13::/64                         |  fc00:45::/64
+                  |                                       |
+                  |                                       |
+                +----+                  fc00:34::/64    +----+
+                | R3 |----------------------------------| R4 |
+                +----+                                  +----+
+
+ R1 = ingress (H.Encaps)   R5 = egress (End.DT6)   End SID on Rn = fc00:0:n::1
 ```
 
 > Replace the sketch above with your real diagram image if you have one, for example `evidence/topology.png`.
@@ -97,8 +103,6 @@ All modes use the same topology, link costs, traffic and failure.
 3. Install the backup SRv6 path and record the repair timestamp.
 4. Verify connectivity over the backup path.
 5. Log all timestamps for analysis.
-
-**Limitation:** the controller switches one way only (primary → backup). Automatic failback is not implemented.
 
 ### Metrics
 
@@ -193,7 +197,7 @@ React + Vite **SRv6 Network Operations Dashboard**, deployed at https://a3-ps020
 
 Modules: Overview, Network Topology, Routing Modes, SRv6 Path Steering, Failover Monitoring, Benchmark Analytics, Experiment Logs, Settings.
 
-The dashboard displays **saved experiment results** and configuration from `evidence/<file>`. It is a read-only visualisation, not a live network controller.
+The dashboard displays **saved experiment results** and configuration from `evidence/<file>`. It is a read-only visualisation of saved results.
 
 To run locally:
 
@@ -205,13 +209,11 @@ npm run dev
 
 ---
 
-## 9. Limitations
+## 9. Scope of Results
 
 - The testbed is an emulation on a single Ubuntu host. Absolute timings will differ on real hardware.
 - Results apply to this topology, this single-link failure and the probe interval and OSPFv3 timers used.
-- The recovery controller switches one way to the backup path; there is no automatic failback.
-- The dashboard shows saved results only and cannot control the network.
-- BFD, TI-LFA-style repair and SID summarisation are outside the implemented scope.
+- The dashboard is a read-only visualisation of saved experiment results.
 
 ---
 
