@@ -1,203 +1,234 @@
-# AIORI-3 HACKATHON PROJECTS
-
 # NetNova – Local SRv6 Path Steering and Measured Failure Recovery
 
-**Team Code:** A3-PS020-TC172  
-**Problem Statement:** PS-020  
-**Category:** 6G & Future Networks  
-**Institution:** RV College of Engineering  
-**Hackathon:** AIORI-3
+**AIORI-3 Hackathon | PS-020 | Team Code: A3-PS020-TC172**
+**Category:** 6G & Future Networks
+**Institution:** RV College of Engineering
 
----
-
-## 👥 Team Members
-
-- **Shivani R M**
-- **Divya Sree N**
-
-### Project Mentor
-
-**Dr. Shweta Babu Prasad**
-
----
-
-## 🎥 Team Introduction Video
-
-**Team:** NetNova  
-**Team Code:** A3-PS020-TC172  
-**Problem Statement:** PS-020 — Local SRv6 Path Steering and Measured Failure Recovery
-
-**YouTube Video:**  
-https://youtube.com/shorts/kKTfiE7RIRU
-
----
-
-## 🚀 Project Overview
-
-Our project focuses on implementing and evaluating Segment Routing over IPv6 (SRv6) for programmable network path steering and measured failure recovery.
-
-We compare conventional IPv6 routing with SRv6-based routing approaches to study network behaviour during link failures.
-
-### Project Objectives
-
-- Implement an SRv6-enabled virtual network using Linux.
-- Configure IPv6 connectivity between five routers.
-- Demonstrate SID-based programmable path steering.
-- Implement backup path switching.
-- Test network link failure and recovery.
-- Measure packet loss, interruption time, failure detection delay, repair delay and SRv6 header overhead.
-- Develop a web-based dashboard to visualize network operations and performance.
-
----
-
-## 🐧 Linux Implementation
-
-The core network implementation was developed in an Ubuntu Linux environment.
-
-### Tools and Technologies
-
-| Technology | Purpose |
+| | |
 |---|---|
-| Ubuntu Linux | Implementation environment |
-| Linux Network Namespaces | Simulating five routers |
-| IPv6 | Network addressing |
-| SRv6 | Programmable packet forwarding |
-| iproute2 | Network and SRv6 configuration |
-| FRRouting (FRR) | Dynamic routing and OSPFv3 |
-| tcpdump | Packet capture and inspection |
-| Python | Automation and performance analysis |
-| Shell Scripting | Network setup and execution |
+| **Team** | NetNova |
+| **Members** | Shivani R M, Divya Sree N |
+| **Mentor** | Dr. Shweta Babu Prasad |
 
-### Network Topology
-
-The virtual network consists of five routers:
-
-**R1, R2, R3, R4 and R5**
-
-The implementation establishes IPv6 connectivity and demonstrates routing through explicit SRv6 paths.
-
-### Implementation Workflow
-
-1. Ubuntu Linux environment setup.
-2. Creation of Linux network namespaces for five routers.
-3. IPv6 address assignment and connectivity configuration.
-4. Baseline routing configuration using OSPFv3.
-5. SRv6 Segment Identifier (SID) configuration.
-6. SRv6 policy-based path steering.
-7. Link failure simulation and backup path switching.
-8. Packet capture, recovery measurement and performance analysis.
+**Quick links:** [Live Dashboard](https://a3-ps020-tc172-5.onrender.com/) · [Team Introduction](https://youtube.com/shorts/kKTfiE7RIRU) · [Full Demo Video](https://youtu.be/PvIQ_SrlY2A)
 
 ---
 
-## ⚙️ SRv6 Implementation and Optimization
+## 1. Project Overview
 
-Three network modes are considered:
+In plain IPv6 routing, every router chooses its own next hop, and after a link failure traffic stays broken until the routing protocol detects the failure and reconverges. Segment Routing over IPv6 (SRv6, RFC 8754 and RFC 8986) lets the first router place a list of Segment Identifiers (SIDs) in the packet header, so the packet follows a path we choose.
 
-- **M0 – Baseline:** Plain IPv6 routing using OSPFv3.
-- **M1 – Scripted Backup Switching:** SRv6 with a scripted backup path switch after failure detection.
-- **M2 – Pre-installed Backup:** SRv6 with a backup path installed in advance.
+This project builds a Linux-based virtual lab and measures what happens to traffic when the same link fails under three routing modes. It does not claim that SRv6 is always better than plain IPv6. Results apply to this topology, this failure and the timers used.
 
-### Optimization Techniques
+### Objectives
+
+- Build an SRv6-enabled five-router network on Linux.
+- Demonstrate SID-based explicit path steering.
+- Compare plain IPv6 (OSPFv3) with two SRv6 recovery approaches under the same link failure.
+- Measure packet loss, RTT, failure detection delay, repair delay, total recovery time and SRv6 header overhead.
+- Present saved results in a web dashboard.
+
+---
+
+## 2. Implementation Status
+
+| Area | Status |
+|---|---|
+| Five-router Linux namespace testbed with source and destination hosts | Implemented |
+| IPv6 addressing and OSPFv3 baseline (FRRouting) | Implemented |
+| SRv6 SIDs, End and End.DT6 behaviours, encapsulation routes | Implemented |
+| Primary path R1→R2→R5 and backup path R1→R3→R4→R5, forwarding verified | Implemented |
+| Probe-based failure detection (3 consecutive failed probes) and backup path installation | Implemented |
+| Timestamp logging, packet loss, RTT, detection / repair / total recovery measurement | Implemented |
+| Repeated trials with statistical analysis | Implemented |
+| React + Vite dashboard (read-only, saved results) | Implemented |
+| Automatic failback to the primary path | **Not implemented** |
+| Live control of the network from the dashboard | **Not implemented** |
+| BFD-based detection, TI-LFA-style repair | **Future work** |
+
+---
+
+## 3. Network Design
+
+### Topology
+
+Five routers run as Linux network namespaces on one Ubuntu host, in a ring: R1–R2–R5–R4–R3–R1. A source host sits behind R1 and a destination host behind R5. The link under test is R2–R5.
+
+```
+                 +-----+ ---- +-----+
+        S --- R1 |     |      | R2  |
+                 +-----+      +-----+
+                   |             |   <-- failed link (R2-R5)
+                 +-----+      +-----+
+                 | R3  | ---- | R4  | --- R5 --- D
+                 +-----+      +-----+
+```
+
+> Replace the sketch above with your real diagram image if you have one, for example `evidence/topology.png`.
+
+### SRv6 paths
+
+| Path | Route | SID list |
+|---|---|---|
+| P1 (primary) | R1 → R2 → R5 | `fc00:0:2::1`, `fc00:0:5::d6` |
+| P2 (backup) | R1 → R3 → R4 → R5 | `fc00:0:3::1`, `fc00:0:4::1`, `fc00:0:5::d6` |
+
+- Locators: `fc00:0:N::/48` for router N.
+- `End` SID on router N: `fc00:0:N::1`.
+- `End.DT6` on R5: `fc00:0:5::d6`.
+- R1 is the ingress (encapsulates); R5 is the egress (decapsulates).
+
+### Routing modes compared
+
+| Mode | Description |
+|---|---|
+| **M0** | Plain IPv6 with OSPFv3, hop-by-hop, no SRH |
+| **M1** | SRv6 on P1; after failure detection a script installs the backup SRv6 path |
+| **M2** | SRv6 with the backup path pre-installed in advance |
+
+All modes use the same topology, link costs, traffic and failure.
+
+---
+
+## 4. Failure Detection and Recovery Controller
+
+1. Send periodic probes towards the destination to monitor reachability.
+2. Declare a failure after **three consecutive failed probes** and record the detection timestamp.
+3. Install the backup SRv6 path and record the repair timestamp.
+4. Verify connectivity over the backup path.
+5. Log all timestamps for analysis.
+
+**Limitation:** the controller switches one way only (primary → backup). Automatic failback is not implemented.
+
+### Metrics
+
+- Detection delay = detection time − failure time
+- Repair delay = repair time − detection time
+- Total recovery time = detection delay + repair delay
+- Packet loss, mean RTT and maximum RTT from the probe stream
+- SRv6 header overhead
+
+Header size is calculated as SRH = 8 + 16n bytes for n SIDs, plus a 40-byte outer IPv6 header with H.Encaps. For P1 (n = 2) this is 80 bytes and for P2 (n = 3) it is 96 bytes. Confirm against the packet captures in `evidence/`.
+
+<!-- VERIFY BEFORE SUBMISSION: delete any item below that is not in your scripts. -->
+### Design techniques used
 
 - Atomic IPv6 route replacement to reduce forwarding interruption.
-- Pre-installed backup path using a binding SID.
-- Link-event-based failure detection and probing.
+- Pre-installed backup path using a binding SID (M2).
 - High-resolution packet probing for interruption measurement.
 - Packet captures to verify SID-based forwarding.
 - Repeated failure experiments for more reliable comparisons.
 
 ---
 
-## 📊 Performance Analysis
+## 5. Results
 
-The project evaluates the following metrics:
+> **Fill this section from the raw logs in `evidence/`. Do not enter estimated values.**
 
-- Packet loss.
-- Traffic interruption time.
-- Failure detection delay.
-- Repair delay.
-- Total recovery time.
-- SRv6 Segment Routing Header overhead.
+**Experiment setup**
 
-**Recovery time model:**
+| Parameter | Value |
+|---|---|
+| Probe interval | `<__ ms>` |
+| Trials per mode | `<__>` |
+| Failed link | R2–R5 |
+| Failure type | `<link down / other>` |
+| Result source file | `evidence/<file>` |
 
-`T_recovery = T_detect + T_decide + T_repair + T_propagate`
+**Recovery results** (mean ± 95% CI over trials)
 
-The experiment design includes at least 30 repeated failure trials and statistical analysis using 95% confidence intervals.
+| Mode | Packet loss | Detection delay | Repair delay | Total recovery | Mean RTT | Max RTT |
+|---|---|---|---|---|---|---|
+| M0 – OSPFv3 | `<>` | `<>` | `<>` | `<>` | `<>` | `<>` |
+| M1 – SRv6 scripted | `<>` | `<>` | `<>` | `<>` | `<>` | `<>` |
+| M2 – SRv6 pre-installed | `<>` | `<>` | `<>` | `<>` | `<>` | `<>` |
 
----
+**Header overhead (from packet capture)**
 
-## 🖥️ SRv6 Network Operations Dashboard
+| Path | SIDs | Measured bytes |
+|---|---|---|
+| P1 | 2 | `<>` |
+| P2 | 3 | `<>` |
 
-The project includes a web-based dashboard for visualizing and presenting the SRv6 network implementation.
-
-**Live Application:**  
-https://a3-ps020-tc172-5.onrender.com
-
-### Dashboard Features
-
-- Network topology visualization.
-- Router operational status.
-- SRv6 path information.
-- Network monitoring interface.
-- Failure recovery information.
-- Performance and benchmark visualization.
+**Observations:** `<write only what the table shows, including any result that does not favour SRv6>`
 
 ---
 
-## 🎬 Project Live Demonstration
+## 6. How to Reproduce
 
-Watch our complete AIORI-3 SRv6 implementation and live demo.
+**Requirements:** Ubuntu `<version>`, Linux kernel with SRv6 (seg6) support, iproute2, FRRouting, tcpdump, Python `<version>`, root access.
 
-**YouTube Video:**  
-https://youtu.be/PvIQ_SrlY2A
+```bash
+git clone https://github.com/aiori-hackathon/A3-PS020-TC172.git
+cd A3-PS020-TC172
 
-### Demo Highlights
+# 1. Create the five-router namespace topology  (replace with your script names)
+sudo bash src/<setup_script>.sh
 
-- Linux-based network implementation.
-- Five-router network topology.
-- IPv6 and SRv6 configuration.
-- SID-based path steering.
-- Network Operations Dashboard.
-- Failure recovery and performance analysis.
+# 2. Run the experiments for M0, M1 and M2
+sudo bash src/<run_script>.sh
 
----
+# 3. Analyse the logs
+python3 src/<analysis_script>.py
+```
 
-## 🛠️ Technology Stack
-
-- Ubuntu Linux
-- Python
-- Shell Scripting
-- IPv6
-- Segment Routing over IPv6 (SRv6)
-- Linux Network Namespaces
-- iproute2
-- FRRouting (FRR)
-- OSPFv3
-- tcpdump
-- React
-- Vite
+Raw logs, packet captures and result files are written to `evidence/`.
 
 ---
 
-## 🎯 Project Outcome
+## 7. Repository Structure
 
-The project demonstrates a Linux-based SRv6 implementation for programmable path steering and measured network failure recovery.
-
-It combines network configuration, SRv6 routing policies, failure simulation, performance benchmarking and a web-based dashboard into an integrated experimental platform.
+```
+src/        Network setup, controller and analysis scripts
+backend/    <describe purpose>
+frontend/   React + Vite dashboard
+evidence/   Raw logs, packet captures and results
+```
 
 ---
 
-## 🔗 Project Resources
+## 8. Dashboard
+
+React + Vite **SRv6 Network Operations Dashboard**, deployed at https://a3-ps020-tc172-5.onrender.com/
+
+Modules: Overview, Network Topology, Routing Modes, SRv6 Path Steering, Failover Monitoring, Benchmark Analytics, Experiment Logs, Settings.
+
+The dashboard displays **saved experiment results** and configuration from `evidence/<file>`. It is a read-only visualisation, not a live network controller.
+
+To run locally:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## 9. Limitations
+
+- The testbed is an emulation on a single Ubuntu host. Absolute timings will differ on real hardware.
+- Results apply to this topology, this single-link failure and the probe interval and OSPFv3 timers used.
+- The recovery controller switches one way to the backup path; there is no automatic failback.
+- The dashboard shows saved results only and cannot control the network.
+- BFD, TI-LFA-style repair and SID summarisation are outside the implemented scope.
+
+---
+
+## 10. Technology Stack
+
+Ubuntu Linux · Linux network namespaces · IPv6 · SRv6 (seg6) · iproute2 · FRRouting (OSPFv3) · tcpdump · Python · Bash · React · Vite
+
+---
+
+## 11. Demo and Resources
 
 | Resource | Link |
 |---|---|
-| Live Dashboard | https://a3-ps020-tc172-5.onrender.com |
+| Live Dashboard | https://a3-ps020-tc172-5.onrender.com/ |
 | Team Introduction Video | https://youtube.com/shorts/kKTfiE7RIRU |
-| Complete Live Demo | https://youtu.be/PvIQ_SrlY2A |
+| Full Implementation and Live Demo | https://youtu.be/PvIQ_SrlY2A |
 
 ---
 
-**Team NetNova**  
-**A3-PS020-TC172 | AIORI-3 Hackathon**  
-**RV College of Engineering**
+**Team NetNova | A3-PS020-TC172 | AIORI-3 Hackathon | RV College of Engineering**
