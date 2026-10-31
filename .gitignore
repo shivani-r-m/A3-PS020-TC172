@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Backups
+*.backup
+frontend-stage1-backup/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Stage 3 review copy
+stage3-review/

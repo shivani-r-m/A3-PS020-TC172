@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-ink-950 font-sans text-slate-300 antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  ::selection {
+    @apply bg-cyan-400/30 text-white;
+  }
+  /* Slim scrollbars to suit the dark UI */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #233252 transparent;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-ink-600/60 bg-ink-850;
+  }
+  .label {
+    @apply text-[11px] font-medium uppercase tracking-wider text-slate-500;
+  }
+  .mono {
+    @apply font-mono text-[12px] tracking-tight;
+  }
+}
+
+/* Animated dashes along an active SVG path (traffic direction) */
+.flow-line {
+  stroke-dasharray: 6 6;
+  animation: flow 1.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-line,
+  .animate-pulse-dot,
+  .animate-fade-up {
+    animation: none !important;
+  }
+}

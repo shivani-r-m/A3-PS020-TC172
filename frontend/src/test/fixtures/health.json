@@ -1,0 +1,16 @@
+{
+ "status": "ok",
+ "service": "aiori3-srv6-backend",
+ "version": "2.0.0",
+ "timestamp": "2026-10-31T09:05:12+00:00",
+ "read_only": true,
+ "live_telemetry": false,
+ "host_os": "Linux",
+ "data_dir": {
+  "path": "<data-dir>",
+  "exists": true,
+  "readable": true,
+  "files_found": 26
+ },
+ "scripts_dir_exists": true
+}
