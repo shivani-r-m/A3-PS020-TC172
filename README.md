@@ -192,7 +192,7 @@ It combines network configuration, SRv6 routing policies, failure simulation, pe
 
 | Resource | Link |
 |---|---|
-| Live Dashboard | https://a3-ps020-tc172-5.onrender.com/ |
+| Live Dashboard | https://a3-ps020-tc172-5.onrender.com |
 | Team Introduction Video | https://youtube.com/shorts/kKTfiE7RIRU |
 | Complete Live Demo | https://youtu.be/PvIQ_SrlY2A |
 
